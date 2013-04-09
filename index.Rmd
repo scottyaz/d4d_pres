@@ -1,6 +1,6 @@
 ---
-title       : "Human Mobility and Cholera Tranmssmision: Insights from Mobile Phone Data"
-subtitle    : (progress on our entry to the D4D competition)
+title       : Human Mobility and Cholera Transmission
+subtitle    : Insights from Mobile Phone Data from the D4D competition
 author      : Andrew Azman
 job         : 
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
