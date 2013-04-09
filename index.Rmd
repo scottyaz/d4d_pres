@@ -12,9 +12,9 @@ mode        : selfcontained # {standalone, draft}
 
 ## Background
 
-* Tesing
-* Hi Isa
-* Bullet 3
+* [D4D](http://d4d.org) Competition to make the most of mobile phone data from Cote d'Ivoir
+* How do human mobility and environmental factors drive cholera transmission
+** Most mobility models parameterized using data from North America or Europe.  What about Africa? 
 
 ---
 
