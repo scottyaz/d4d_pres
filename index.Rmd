@@ -14,6 +14,7 @@ mode        : selfcontained # {standalone, draft}
 
 * Tesing
 * Hi Isa
+* Bullet 3
 
 ---
 
