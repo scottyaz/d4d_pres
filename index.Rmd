@@ -11,10 +11,11 @@ mode        : selfcontained # {standalone, draft}
 ---
 
 ## Background
-* [D4D](http://d4d.org) Competition to make the most of mobile phone data from Cote d'Ivoir
+* [D4D](http://www.d4d.orange.com/home) Competition to make the most of mobile phone data from Cote d'Ivoir
 * How do human mobility and environmental factors drive cholera transmission
-** Most mobility models parameterized using data from North America or Europe.  What about Africa? 
-** Most models forumlated in terms of person to person tranmission
+ * Most mobility models parameterized using data from North America or Europe.  What about Africa? 
+ * Most models forumlated in terms of person-to-person tranmission
+* Opportunity to combine detailed environmental data with mobility data to understand how disease (in this case cholera) are spread.
 
 ---
 
@@ -28,6 +29,14 @@ mode        : selfcontained # {standalone, draft}
 
 ## Mobile Phone Data
 
+```{r echo=FALSE,comment=""}
+dat <- read.table("/Users/aazman/Documents/D4D/trunk/data/POS_SAMPLE_0.TSV",sep="\t",nrows=100)
+colnames(dat) <- c("id","call.time","call.tower")
+head(dat)
+```
+
+<img src=figures/towers_tesselation.png height="300" width="300">
+
 ---
 
 ## Our (simple) Mobility Model
@@ -38,7 +47,7 @@ mode        : selfcontained # {standalone, draft}
 
 ---
 
-## Cholera Tranmission Model
+## Cholera Transmission Model
 
 ---
 
