@@ -51,9 +51,8 @@
 
 <ul>
 <li>Most mobility models parameter using data from North America or Europe.  What about Africa? </li>
-<li>Most models formulated in terms of person-to-person transmission. What can we learn from an environmentally driven model? </li>
+<li>Most models formulated in terms of person-to-person transmission. What can we learn from an environmentally driven model?</li>
 </ul></li>
-<li>Opportunity to combine detailed detailed environmental data with mobility data to understand how disease (in this case cholera) are spread.</li>
 </ul>
 
   </article>
@@ -73,7 +72,7 @@
 <li>Population / population density</li>
 <li>Distance between locations</li>
 </ul></li>
-<li>Gravity Models \(\left(pr( i \rightarrow j) \propto P_i^{\alpha}P_j^{\beta}f(d_{ij})\right)\)</li>
+<li>Gravity Models \(\left(pr( i \rightarrow j) \propto \frac{P_i^{\alpha}P_j^{\beta}}{f(d_{ij})}\right)\)</li>
 <li>Radiation Models (non-parametric)</li>
 <li>Useful for understanding disease dynamics especially in the context of individual-based models
 <img class="center" src=figures/zipf_and_newton.jpg height="105" width="190"></li>
@@ -96,12 +95,12 @@
 
 <div class='left' style='float:left;width:50%'>
  <pre><code>##      id      call.date.time call.tower
-## 8740 86 2011-12-11 10:29:00        299
-## 4289 42 2011-12-05 20:02:00        240
-## 715   5 2011-12-09 17:10:00        152
-## 6296 56 2011-12-13 17:20:00        709
-## 1480 20 2011-12-07 09:42:00        898
-## 1420 19 2011-12-12 09:37:00         25
+## 77    1 2011-12-13 20:11:00        264
+## 6208 56 2011-12-08 17:53:00        709
+## 951  12 2011-12-14 18:24:00        841
+## 5082 45 2011-12-08 07:13:00        307
+## 5587 52 2011-12-11 19:07:00        331
+## 5788 53 2011-12-09 15:01:00        322
 </code></pre>
 
 </div>
@@ -239,25 +238,6 @@ log(P_i) + \alpha_4 log(P_j) + \alpha_5 log(d_{ij}) & \mbox{if } i \neq j
 
       <slide class="" id="slide-8" style="background:;">
   <hgroup>
-    <h2>Extensions of the Mobility Model</h2>
-  </hgroup>
-  <article>
-    <ul>
-<li>Where do people go?</li>
-<li>How long do people stay?
-
-<ul>
-<li>frequency of calls from a single location in a day?</li>
-<li>time between calls in the same location?</li>
-</ul></li>
-</ul>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-      <slide class="" id="slide-9" style="background:;">
-  <hgroup>
     <h2>Cholera Transmission Model</h2>
   </hgroup>
   <article>
@@ -277,7 +257,7 @@ log(P_i) + \alpha_4 log(P_j) + \alpha_5 log(d_{ij}) & \mbox{if } i \neq j
   <!-- Presenter Notes -->
 </slide>
 
-      <slide class="" id="slide-10" style="background:;">
+      <slide class="" id="slide-9" style="background:;">
   <hgroup>
     <h2>Environmental Mediators of Transmission</h2>
   </hgroup>
@@ -288,32 +268,64 @@ log(P_i) + \alpha_4 log(P_j) + \alpha_5 log(d_{ij}) & \mbox{if } i \neq j
   <!-- Presenter Notes -->
 </slide>
 
+      <slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Cholera Simulations</h2>
+  </hgroup>
+  <article>
+    <p><img class="center" src=figures/arrival_time_run2.png height="500" width="400"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
       <slide class="" id="slide-11" style="background:;">
   <hgroup>
     <h2>Cholera Simulations</h2>
   </hgroup>
   <article>
-    
+    <p><img class="center" src=figures/run5_3.png height="500" width="600"></p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
       <slide class="" id="slide-12" style="background:;">
   <hgroup>
-    <h2>Future Directions and Questions</h2>
+    <h2>Future Directions</h2>
   </hgroup>
   <article>
-    
+    <ul>
+<li>Improve movement model
+
+<ul>
+<li>How to learn about duration</li>
+<li>Simulations to understand potential biases</li>
+</ul></li>
+<li>Refine functional form of environmental modifiers </li>
+<li>Fit to cholera data</li>
+<li>Exploration of general epidemiologic connectivity of areas within country</li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
       <slide class="" id="slide-13" style="background:;">
   <hgroup>
-    
+    <h2>Extensions of the Mobility Model</h2>
   </hgroup>
   <article>
-    
+    <ul>
+<li>Where do people go?</li>
+<li>How long do people stay?
+
+<ul>
+<li>frequency of calls from a single location in a day?</li>
+<li>time between calls in the same location?</li>
+</ul></li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>

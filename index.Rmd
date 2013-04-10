@@ -14,8 +14,7 @@ mode        : selfcontained # {standalone, draft}
 - [D4D competition](http://www.d4d.orange.com/home)  to make the most of mobile phone data from Cote d'Ivoir
 - How do human mobility and environmental factors drive cholera transmission
  - Most mobility models parameter using data from North America or Europe.  What about Africa? 
- - Most models formulated in terms of person-to-person transmission. What can we learn from an environmentally driven model? 
-- Opportunity to combine detailed detailed environmental data with mobility data to understand how disease (in this case cholera) are spread.
+ - Most models formulated in terms of person-to-person transmission. What can we learn from an environmentally driven model?
 
 --- 
 
@@ -25,7 +24,7 @@ mode        : selfcontained # {standalone, draft}
 * Key features:
  * Population / population density
  * Distance between locations
-* Gravity Models $\left(pr( i \rightarrow j) \propto P_i^{\alpha}P_j^{\beta}f(d_{ij})\right)$
+* Gravity Models $\left(pr( i \rightarrow j) \propto \frac{P_i^{\alpha}P_j^{\beta}}{f(d_{ij})}\right)$
 * Radiation Models (non-parametric)
 * Useful for understanding disease dynamics especially in the context of individual-based models
 <img class="center" src=figures/zipf_and_newton.jpg height="105" width="190">
@@ -100,15 +99,6 @@ head(dat[sample(nrow(dat),10),])
 
 <img class="center" src=figures/prob_at_home_simple_model_fit.png height="400" width="400">
 
-
----
-   
-## Extensions of the Mobility Model
-* Where do people go?
-* How long do people stay?
- * frequency of calls from a single location in a day?
- * time between calls in the same location?
-
 ---
 
 ## Cholera Transmission Model
@@ -130,11 +120,32 @@ head(dat[sample(nrow(dat),10),])
 
 ## Cholera Simulations
 
----
-
-## Future Directions and Questions
+<img class="center" src=figures/arrival_time_run2.png height="500" width="400">
 
 ---
+
+## Cholera Simulations
+
+<img class="center" src=figures/run5_3.png height="500" width="600">
+
+---
+
+## Future Directions
+
+* Improve movement model
+  * How to learn about duration
+  * Simulations to understand potential biases
+* Refine functional form of environmental modifiers 
+* Fit to cholera data
+* Exploration of general epidemiologic connectivity of areas within country
+
+---
+   
+## Extensions of the Mobility Model
+* Where do people go?
+* How long do people stay?
+ * frequency of calls from a single location in a day?
+ * time between calls in the same location?
 
 
 
