@@ -17,10 +17,15 @@ mode        : selfcontained # {standalone, draft}
  - Most models formulated in terms of person-to-person transmission. What can we learn from an environmentally driven model? 
 - Opportunity to combine detailed detailed environmental data with mobility data to understand how disease (in this case cholera) are spread.
 
----
+--- &twocol w1:40% w2:60%
 
 ## Human Mobility Models
 
+*** left 
+<img class="center" src=figures/zpf.jpg height="80" width="60">
+<img class="center" src=figures/newton.jpg height="80" width="60">
+
+*** right
 * Humans (may) follow simple reproducible patterns in their movements
 * Key features:
  * Population / population density
@@ -40,12 +45,12 @@ mode        : selfcontained # {standalone, draft}
 
 ```
 ##      id      call.date.time call.tower
-## 394   3 2011-12-09 11:58:00       1080
-## 2473 20 2011-12-18 17:49:00        883
-## 2054 20 2011-12-11 20:47:00        471
-## 2809 24 2011-12-11 11:37:00        347
-## 7086 64 2011-12-18 17:51:00        837
-## 9765 94 2011-12-11 06:02:00        268
+## 5032 44 2011-12-13 08:25:00        997
+## 1883 20 2011-12-10 11:14:00        898
+## 9382 90 2011-12-13 10:26:00       1036
+## 4280 42 2011-12-05 19:58:00        240
+## 4295 42 2011-12-05 20:31:00        240
+## 988  13 2011-12-14 12:48:00        556
 ```
 
 
