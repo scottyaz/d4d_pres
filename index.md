@@ -13,15 +13,15 @@ mode        : selfcontained # {standalone, draft}
 ## Background
 - [D4D competition](http://www.d4d.orange.com/home)  to make the most of mobile phone data from Cote d'Ivoir
 - How do human mobility and environmental factors drive cholera transmission
- - Most mobility models parameterized using data from North America or Europe.  What about Africa? 
- - Most models forumlated in terms of person-to-person transmission. What can we learn from an environmentally driven model? 
+ - Most mobility models parameter using data from North America or Europe.  What about Africa? 
+ - Most models formulated in terms of person-to-person transmission. What can we learn from an environmentally driven model? 
 - Opportunity to combine detailed environmental data with mobility data to understand how disease (in this case cholera) are spread.
 
 ---
 
 ## Human Mobility Models
 
-* Humans (may) follow simple reproducible patterns in thier movements
+* Humans (may) follow simple reproducible patterns in their movements
 * Key features:
  * Population / population density
  * Distance between locations
@@ -40,12 +40,12 @@ mode        : selfcontained # {standalone, draft}
 
 ```
 ##      id      call.date.time call.tower
-## 2669 23 2011-12-13 20:55:00        863
-## 3900 39 2011-12-11 21:10:00        115
-## 1561 20 2011-12-07 16:37:00        898
-## 4870 44 2011-12-07 07:48:00        414
-## 8829 87 2011-12-07 07:03:00        981
-## 5063 44 2011-12-15 06:49:00        414
+## 2423 20 2011-12-17 06:57:00        898
+## 8563 85 2011-12-11 21:35:00        780
+## 6961 62 2011-12-13 07:55:00       1024
+## 5715 53 2011-12-07 09:32:00        322
+## 6818 60 2011-12-13 17:37:00        225
+## 6430 56 2011-12-18 10:43:00       1112
 ```
 
 
@@ -102,7 +102,7 @@ mode        : selfcontained # {standalone, draft}
   50% | 1.8791 | -0.1594 | -6.9815 | 0.0239 | 0.2905 | -1.1266  
   97.5% | 1.8876 | -0.1584 | -6.9707 | 0.0249 | 0.2913 | -1.1262  
 
-<p align="center"><img src=figures/prob_at_home_simple_model_fit.png height="400" width="400"></p>
+<img class="center" src=figures/prob_at_home_simple_model_fit.png height="400" width="400">
 
 
 ---
@@ -117,7 +117,7 @@ mode        : selfcontained # {standalone, draft}
 
 ## Cholera Transmission Model
 
-* Discrete-time Suscuptible Infectious Recovered (SIR) Model
+* Discrete-time Susceptible Infectious Recovered (SIR) Model
 * Country divided into 5-km grid cells
 * All infections mediated through environment
  * Cholera infected individuals shed vibrios into "environment"
@@ -126,7 +126,7 @@ mode        : selfcontained # {standalone, draft}
 
 ---
 
-## Environmental Factors
+## Environmental Mediators of Transmission
 
 <img class="center" src=figures/four_env_plot.png height="500" width="500">
 
