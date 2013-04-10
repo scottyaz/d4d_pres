@@ -1,8 +1,8 @@
 ---
 title       : Human Mobility and Cholera Transmission
 subtitle    : Insights from Mobile Phone Data from the D4D competition
-author      : Andrew Azman
-job         : 
+author      : Andrew Azman (with Justin Lessler)
+job         : http://scottyaz.github.io/d4d_pres/
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
