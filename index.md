@@ -29,33 +29,46 @@ mode        : selfcontained # {standalone, draft}
 * Radiation Models (non-parametric)
 * Useful for understanding disease dynamics especially in the context of individual-based models
 
----
+--- &twocol w1:50% w2:50%
 
 ## D4D Data Set
 
 * 484,383 individuals observed over different two week periods
 * 55,319,911 calls made from 1194 towers
 
+*** left 
 
 ```
 ##      id      call.date.time call.tower
-## 4402 42 2011-12-08 22:28:00        240
-## 3584 35 2011-12-14 14:58:00        544
-## 2915 24 2011-12-18 16:31:00        759
-## 2422 20 2011-12-17 01:14:00        898
-## 643   4 2011-12-15 07:41:00        621
-## 7653 72 2011-12-08 08:54:00        314
+## 5130 46 2011-12-17 10:42:00        285
+## 166   1 2011-12-18 14:27:00        264
+## 1722 20 2011-12-07 21:48:00        898
+## 5384 50 2011-12-09 12:31:00         38
+## 9306 90 2011-12-12 13:08:00       1025
+## 7801 74 2011-12-06 23:04:00        903
 ```
 
 
-<img src=figures/calls_per_person.png height="200" width="200">
-<p align="center"><img src=figures/time_between_calls50.png height="200" width="200"></p>
+--- &twocol w1:50% w2:50%
+
+*** left
+<p></p>
+<p></p>
+<p></p>
+<img class="center" src=figures/calls_per_person.png height="500" width="500">
+
+*** right
+
+<p></p>
+<p></p>
+<p></p>
+<img class="center" src=figures/time_between_calls50.png height="500" width="500">
 
 ---
 
 ## Towers
 
-<p align="center"><img src=figures/towers_tesselation.png height="500" width="500"></p>
+<img class="center" src=figures/towers_tesselation.png height="550" width="550">
 
 ---
 

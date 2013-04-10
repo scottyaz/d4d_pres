@@ -29,13 +29,14 @@ mode        : selfcontained # {standalone, draft}
 * Radiation Models (non-parametric)
 * Useful for understanding disease dynamics especially in the context of individual-based models
 
----
+--- &twocol w1:50% w2:50%
 
 ## D4D Data Set
 
 * 484,383 individuals observed over different two week periods
 * 55,319,911 calls made from 1194 towers
 
+*** left 
 ```{r echo=FALSE,tidy=TRUE}
 dat <- read.table("/Users/aazman/Documents/D4D/trunk/data/POS_SAMPLE_0.TSV",sep="\t",nrows=10000)
 dat <- dat[-which(dat[,3] == -1),]
@@ -43,14 +44,26 @@ colnames(dat) <- c("id","call.date.time","call.tower")
 head(dat[sample(nrow(dat),10),])
 ```
 
-<img src=figures/calls_per_person.png height="200" width="200">
-<p align="center"><img src=figures/time_between_calls50.png height="200" width="200"></p>
+--- &twocol w1:50% w2:50%
+
+*** left
+<p></p>
+<p></p>
+<p></p>
+<img class="center" src=figures/calls_per_person.png height="500" width="500">
+
+*** right
+
+<p></p>
+<p></p>
+<p></p>
+<img class="center" src=figures/time_between_calls50.png height="500" width="500">
 
 ---
 
 ## Towers
 
-<p align="center"><img src=figures/towers_tesselation.png height="500" width="500"></p>
+<img class="center" src=figures/towers_tesselation.png height="550" width="550">
 
 ---
 
