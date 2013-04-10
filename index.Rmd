@@ -123,7 +123,7 @@ head(dat[sample(nrow(dat),10),])
 
 ## Environmental Factors
 
-<p align="center"><img src=figures/four_env_plot.png height="500" width="500"></p>
+<img class="center" src=figures/four_env_plot.png height="500" width="500">
 
 ---
 
