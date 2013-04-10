@@ -15,7 +15,7 @@ mode        : selfcontained # {standalone, draft}
 - How do human mobility and environmental factors drive cholera transmission
  - Most mobility models parameter using data from North America or Europe.  What about Africa? 
  - Most models formulated in terms of person-to-person transmission. What can we learn from an environmentally driven model? 
-- Opportunity to combine detailed environmental data with mobility data to understand how disease (in this case cholera) are spread.
+- Opportunity to combine detailed detailed environmental data with mobility data to understand how disease (in this case cholera) are spread.
 
 ---
 
@@ -40,12 +40,12 @@ mode        : selfcontained # {standalone, draft}
 
 ```
 ##      id      call.date.time call.tower
-## 2423 20 2011-12-17 06:57:00        898
-## 8563 85 2011-12-11 21:35:00        780
-## 6961 62 2011-12-13 07:55:00       1024
-## 5715 53 2011-12-07 09:32:00        322
-## 6818 60 2011-12-13 17:37:00        225
-## 6430 56 2011-12-18 10:43:00       1112
+## 394   3 2011-12-09 11:58:00       1080
+## 2473 20 2011-12-18 17:49:00        883
+## 2054 20 2011-12-11 20:47:00        471
+## 2809 24 2011-12-11 11:37:00        347
+## 7086 64 2011-12-18 17:51:00        837
+## 9765 94 2011-12-11 06:02:00        268
 ```
 
 
