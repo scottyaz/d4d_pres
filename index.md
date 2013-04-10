@@ -6,73 +6,116 @@ job         :
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
-widgets     : []            # {mathjax, quiz, bootstrap}
+widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 ---
 
 ## Background
-- [D4D](http://www.d4d.orange.com/home) Competition to make the most of mobile phone data from Cote d'Ivoir
+- [D4D competition](http://www.d4d.orange.com/home)  to make the most of mobile phone data from Cote d'Ivoir
 - How do human mobility and environmental factors drive cholera transmission
  - Most mobility models parameterized using data from North America or Europe.  What about Africa? 
- - Most models forumlated in terms of person-to-person tranmission
+ - Most models forumlated in terms of person-to-person transmission. What can we learn from an environmentally driven model? 
 - Opportunity to combine detailed environmental data with mobility data to understand how disease (in this case cholera) are spread.
 
 ---
 
 ## Human Mobility Models
 
-* Zipf's Law
-* Gravity Models
-* Radiation Models
+* Humans (may) follow simple reproducible patterns in thier movements
+* Key features:
+ * Population / population density
+ * Distance between locations
+* Gravity Models $\left(pr( i \rightarrow j) \propto P_i^{\alpha}P_j^{\beta}f(d_{ij})\right)$
+* Radiation Models (non-parametric)
+* Useful for understanding disease dynamics especially in the context of individual-based models
 
 ---
 
-## Mobile Phone Data
+## D4D Data Set
 
-* 500,000 individuals observed over different two week periods
+* 484,383 individuals observed over different two week periods
 * 55,319,911 calls made from 1194 towers
 
 
 ```
-  id           call.time call.tower
-1  1 2011-12-06 16:59:00        264
-2  1 2011-12-06 21:00:00        264
-3  1 2011-12-06 22:36:00        264
-4  1 2011-12-07 07:39:00        264
-5  1 2011-12-07 07:45:00        264
-6  1 2011-12-07 07:47:00        264
+##      id      call.date.time call.tower
+## 4402 42 2011-12-08 22:28:00        240
+## 3584 35 2011-12-14 14:58:00        544
+## 2915 24 2011-12-18 16:31:00        759
+## 2422 20 2011-12-17 01:14:00        898
+## 643   4 2011-12-15 07:41:00        621
+## 7653 72 2011-12-08 08:54:00        314
 ```
 
 
 <img src=figures/calls_per_person.png height="200" width="200">
-<img src=figures/calls_per_person.png height="200" width="200">
+<p align="center"><img src=figures/time_between_calls50.png height="200" width="200"></p>
 
-
---- 
+---
 
 ## Towers
 
-<img src=figures/towers_tesselation.png height="500" width="500">
+<p align="center"><img src=figures/towers_tesselation.png height="500" width="500"></p>
 
 ---
 
 ## Our (simple) Mobility Model
 
+* Person k (given their home location) will be seen in any other location at any point in time ($\nu_{i,j}$)
+\[ 
+\begin{align}
+ logit(\nu_{i,j}) = 
+    \left\{
+ \begin{array}{ll}
+		 \alpha_0 + \alpha_1
+  log(P_i)  & \mbox{if } i  = j \\
+		 \alpha_2 + \alpha_3
+  log(P_i) + \alpha_4 log(P_j) + \alpha_5 log(d_{ij}) & \mbox{if } i \neq j
+	\end{array}
+\right.
+\end{align}
+\]
+* Challenges:
+ * Depends on home location
+ * Assumes trips always made from home to different locations
+
 ---
 
+## Model Fit
+
+ quantile | $\alpha_0$ | $\alpha_1$ | $\alpha_2$ | $\alpha_3$ | $\alpha_4$ | $\alpha_5$ 
+  --------|------------|------------|-----------|--------------|-----------|------------
+  2.5% | 1.8704 | -0.1603 | -6.9926 | 0.0229 | 0.2897 | -1.1270 
+  50% | 1.8791 | -0.1594 | -6.9815 | 0.0239 | 0.2905 | -1.1266  
+  97.5% | 1.8876 | -0.1584 | -6.9707 | 0.0249 | 0.2913 | -1.1262  
+
+<p align="center"><img src=figures/prob_at_home_simple_model_fit.png height="400" width="400"></p>
+
+
+---
+   
 ## Extensions of the Mobility Model
+* Where do people go?
+* How long do people stay?
+ * frequency of calls from a single location in a day?
+ * time between calls in the same location?
 
 ---
 
 ## Cholera Transmission Model
 
+* Discrete-time Suscuptible Infectious Recovered (SIR) Model
+* Country divided into 5-km grid cells
+* All infections mediated through environment
+ * Cholera infected individuals shed vibrios into "environment"
+ * People drink water with some concentration of vibrios from the environment
+ * With some probability (dose-response) people get sick
+
 ---
 
 ## Environmental Factors
 
----
-
-## Mobility Model Fit
+<p align="center"><img src=figures/four_env_plot.png height="500" width="500"></p>
 
 ---
 

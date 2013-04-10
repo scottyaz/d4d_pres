@@ -19,6 +19,7 @@
   </script>
   
     <link rel="stylesheet" href = "assets/css/ribbons.css">
+<link rel="stylesheet" href = "assets/css/slidify.css">
 
 </head>
 <body style="opacity: 0">
@@ -45,12 +46,12 @@
   </hgroup>
   <article>
     <ul>
-<li><a href="http://www.d4d.orange.com/home">D4D</a> Competition to make the most of mobile phone data from Cote d&#39;Ivoir</li>
+<li><a href="http://www.d4d.orange.com/home">D4D competition</a>  to make the most of mobile phone data from Cote d&#39;Ivoir</li>
 <li>How do human mobility and environmental factors drive cholera transmission
 
 <ul>
 <li>Most mobility models parameterized using data from North America or Europe.  What about Africa? </li>
-<li>Most models forumlated in terms of person-to-person tranmission</li>
+<li>Most models forumlated in terms of person-to-person transmission. What can we learn from an environmentally driven model? </li>
 </ul></li>
 <li>Opportunity to combine detailed environmental data with mobility data to understand how disease (in this case cholera) are spread.</li>
 </ul>
@@ -65,9 +66,16 @@
   </hgroup>
   <article>
     <ul>
-<li>Zipf&#39;s Law</li>
-<li>Gravity Models</li>
-<li>Radiation Models</li>
+<li>Humans (may) follow simple reproducible patterns in thier movements</li>
+<li>Key features:
+
+<ul>
+<li>Population / population density</li>
+<li>Distance between locations</li>
+</ul></li>
+<li>Gravity Models \(\left(pr( i \rightarrow j) \propto P_i^{\alpha}P_j^{\beta}f(d_{ij})\right)\)</li>
+<li>Radiation Models (non-parametric)</li>
+<li>Useful for understanding disease dynamics especially in the context of individual-based models</li>
 </ul>
 
   </article>
@@ -76,25 +84,26 @@
 
       <slide class="" id="slide-3" style="background:;">
   <hgroup>
-    <h2>Mobile Phone Data</h2>
+    <h2>D4D Data Set</h2>
   </hgroup>
   <article>
     <ul>
-<li>500,000 individuals observed over different two week periods</li>
+<li>484,383 individuals observed over different two week periods</li>
 <li>55,319,911 calls made from 1194 towers</li>
 </ul>
 
-<pre><code>  id           call.time call.tower
-1  1 2011-12-06 16:59:00        264
-2  1 2011-12-06 21:00:00        264
-3  1 2011-12-06 22:36:00        264
-4  1 2011-12-07 07:39:00        264
-5  1 2011-12-07 07:45:00        264
-6  1 2011-12-07 07:47:00        264
+<pre><code>##      id      call.date.time call.tower
+## 4402 42 2011-12-08 22:28:00        240
+## 3584 35 2011-12-14 14:58:00        544
+## 2915 24 2011-12-18 16:31:00        759
+## 2422 20 2011-12-17 01:14:00        898
+## 643   4 2011-12-15 07:41:00        621
+## 7653 72 2011-12-08 08:54:00        314
 </code></pre>
 
-<p><img src=figures/calls_per_person.png height="200" width="200">
-<img src=figures/calls_per_person.png height="200" width="200"></p>
+<p><img src=figures/calls_per_person.png height="200" width="200"></p>
+
+<p align="center"><img src=figures/time_between_calls50.png height="200" width="200"></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -105,7 +114,7 @@
     <h2>Towers</h2>
   </hgroup>
   <article>
-    <p><img src=figures/towers_tesselation.png height="500" width="500"></p>
+    <p align="center"><img src=figures/towers_tesselation.png height="500" width="500"></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -116,47 +125,131 @@
     <h2>Our (simple) Mobility Model</h2>
   </hgroup>
   <article>
-    
+    <ul>
+<li>Person k (given their home location) will be seen in any other location at any point in time (\(\nu_{i,j}\))
+\[ 
+\begin{align}
+logit(\nu_{i,j}) = 
+\left\{
+\begin{array}{ll}
+     \alpha_0 + \alpha_1
+log(P_i)  & \mbox{if } i  = j \\
+     \alpha_2 + \alpha_3
+log(P_i) + \alpha_4 log(P_j) + \alpha_5 log(d_{ij}) & \mbox{if } i \neq j
+\end{array}
+\right.
+\end{align}
+\]</li>
+<li>Challenges:
+
+<ul>
+<li>Depends on home location</li>
+<li>Assumes trips always made from home to different locations</li>
+</ul></li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
       <slide class="" id="slide-6" style="background:;">
   <hgroup>
-    <h2>Extensions of the Mobility Model</h2>
+    <h2>Model Fit</h2>
   </hgroup>
   <article>
-    
+    <table><thead>
+<tr>
+<th>quantile</th>
+<th>\(\alpha_0\)</th>
+<th>\(\alpha_1\)</th>
+<th>\(\alpha_2\)</th>
+<th>\(\alpha_3\)</th>
+<th>\(\alpha_4\)</th>
+<th>\(\alpha_5\)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>2.5%</td>
+<td>1.8704</td>
+<td>-0.1603</td>
+<td>-6.9926</td>
+<td>0.0229</td>
+<td>0.2897</td>
+<td>-1.1270</td>
+</tr>
+<tr>
+<td>50%</td>
+<td>1.8791</td>
+<td>-0.1594</td>
+<td>-6.9815</td>
+<td>0.0239</td>
+<td>0.2905</td>
+<td>-1.1266</td>
+</tr>
+<tr>
+<td>97.5%</td>
+<td>1.8876</td>
+<td>-0.1584</td>
+<td>-6.9707</td>
+<td>0.0249</td>
+<td>0.2913</td>
+<td>-1.1262</td>
+</tr>
+</tbody></table>
+
+<p align="center"><img src=figures/prob_at_home_simple_model_fit.png height="400" width="400"></p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
       <slide class="" id="slide-7" style="background:;">
   <hgroup>
-    <h2>Cholera Transmission Model</h2>
+    <h2>Extensions of the Mobility Model</h2>
   </hgroup>
   <article>
-    
+    <ul>
+<li>Where do people go?</li>
+<li>How long do people stay?
+
+<ul>
+<li>frequency of calls from a single location in a day?</li>
+<li>time between calls in the same location?</li>
+</ul></li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
       <slide class="" id="slide-8" style="background:;">
   <hgroup>
-    <h2>Environmental Factors</h2>
+    <h2>Cholera Transmission Model</h2>
   </hgroup>
   <article>
-    
+    <ul>
+<li>Discrete-time Suscuptible Infectious Recovered (SIR) Model</li>
+<li>Country divided into 5-km grid cells</li>
+<li>All infections mediated through environment
+
+<ul>
+<li>Cholera infected individuals shed vibrios into &quot;environment&quot;</li>
+<li>People drink water with some concentration of vibrios from the environment</li>
+<li>With some probability (dose-response) people get sick</li>
+</ul></li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
       <slide class="" id="slide-9" style="background:;">
   <hgroup>
-    <h2>Mobility Model Fit</h2>
+    <h2>Environmental Factors</h2>
   </hgroup>
   <article>
-    
+    <p align="center"><img src=figures/four_env_plot.png height="500" width="500"></p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -205,6 +298,20 @@
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
 <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery-1.7.min.js"><\/script>')</script>
 <!-- Load Javascripts for Widgets -->
+<!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> -->
+<script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
 <!-- LOAD HIGHLIGHTER JS FILES -->
 <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
