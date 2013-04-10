@@ -17,15 +17,10 @@ mode        : selfcontained # {standalone, draft}
  - Most models formulated in terms of person-to-person transmission. What can we learn from an environmentally driven model? 
 - Opportunity to combine detailed detailed environmental data with mobility data to understand how disease (in this case cholera) are spread.
 
---- &twocol w1:70% w2:30%
+--- 
 
 ## Human Mobility Models
 
-*** right 
-<img class="center" src=figures/zpf.jpg height="10" width="10">
-<img class="center" src=figures/newton.jpg height="10" width="10">
-
-*** left
 * Humans (may) follow simple reproducible patterns in their movements
 * Key features:
  * Population / population density
@@ -33,6 +28,7 @@ mode        : selfcontained # {standalone, draft}
 * Gravity Models $\left(pr( i \rightarrow j) \propto P_i^{\alpha}P_j^{\beta}f(d_{ij})\right)$
 * Radiation Models (non-parametric)
 * Useful for understanding disease dynamics especially in the context of individual-based models
+<img class="center" src=figures/zipf_and_newton.jpg height="105" width="190">
 
 --- &twocol w1:50% w2:50%
 
