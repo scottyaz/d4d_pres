@@ -10,7 +10,7 @@ widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 ---
 
-<img class="center" src=figures/d4dscreen.tiff height="600" width="900">
+<img class="center" src=figures/d4dscreen.png height="600" width="900">
 
 
 ---
