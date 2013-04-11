@@ -47,12 +47,12 @@ mode        : selfcontained # {standalone, draft}
 
 ```
 ##      id      call.date.time call.tower
-## 1277 15 2011-12-15 16:36:00        124
-## 7804 74 2011-12-06 23:06:00        903
-## 8046 78 2011-12-10 16:04:00        151
-## 8208 82 2011-12-13 20:11:00        626
-## 7     1 2011-12-07 08:00:00        264
-## 4335 42 2011-12-06 16:36:00        240
+## 3488 33 2011-12-08 14:28:00        648
+## 3940 39 2011-12-12 05:38:00        115
+## 5045 44 2011-12-13 17:13:00       1063
+## 3485 33 2011-12-08 09:55:00        648
+## 7628 72 2011-12-06 23:29:00        564
+## 7082 64 2011-12-18 17:09:00        837
 ```
 
 
@@ -90,13 +90,13 @@ mode        : selfcontained # {standalone, draft}
 ---
 ## Towers
 
-<img class="center" src=figures/towers_tesselation.png height="550" width="550">
+<img class="center" src=figures/towers_tesselation.png height="550" width="600">
 
 ---
 
 ## Our (simple) Mobility Model
 
-* Person $k$ (given their home location $i$) will be seen in any other location at any point in time with probability ($\nu_{i,j}$)
+* Person $k$ (given their home location $i$) will be seen in any other location at any point in time with probability $\nu_{i,j}$
 \[ 
 \begin{align}
  logit(\nu_{i,j}) = 
@@ -166,14 +166,6 @@ mode        : selfcontained # {standalone, draft}
 * Refine functional form of environmental modifiers 
 * Fit to cholera data 
 * Exploration of general epidemiologic connectivity of areas within country
-
----
-   
-## Extensions of the Mobility Model
-* Where do people go?
-* How long do people stay?
- * frequency of calls from a single location in a day?
- * time between calls in the same location?
 
 --- 
 

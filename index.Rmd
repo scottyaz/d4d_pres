@@ -85,13 +85,13 @@ head(dat[sample(nrow(dat),10),])
 ---
 ## Towers
 
-<img class="center" src=figures/towers_tesselation.png height="550" width="550">
+<img class="center" src=figures/towers_tesselation.png height="550" width="600">
 
 ---
 
 ## Our (simple) Mobility Model
 
-* Person $k$ (given their home location $i$) will be seen in any other location at any point in time with probability ($\nu_{i,j}$)
+* Person $k$ (given their home location $i$) will be seen in any other location at any point in time with probability $\nu_{i,j}$
 \[ 
 \begin{align}
  logit(\nu_{i,j}) = 
@@ -161,14 +161,6 @@ head(dat[sample(nrow(dat),10),])
 * Refine functional form of environmental modifiers 
 * Fit to cholera data 
 * Exploration of general epidemiologic connectivity of areas within country
-
----
-   
-## Extensions of the Mobility Model
-* Where do people go?
-* How long do people stay?
- * frequency of calls from a single location in a day?
- * time between calls in the same location?
 
 --- 
 
