@@ -186,7 +186,7 @@ ol ul {
 }
 
 ol {
-  list-style-type: decimal;
+  list-style-type: circle;
 }
 
 /* Added this for centering images */

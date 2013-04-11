@@ -10,31 +10,38 @@ widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 ---
 
-## Background
-- [D4D competition](http://www.d4d.orange.com/home)  to make the most of mobile phone data from Cote d'Ivoir
-- How do human mobility and environmental factors drive cholera transmission
- - Most mobility models parameter using data from North America or Europe.  What about Africa? 
- - Most models formulated in terms of person-to-person transmission. What can we learn from an environmentally driven model?
+<img class="center" src=figures/d4dscreen.tiff height="600" width="900">
+
+
+---
+
+## Motivation
+- What role do human mobility and local environmental conditions play in cholera transmission?
+ - North American/European vs. African mobility patterns
+ - Person-to-person vs. environmentally mediated transmission
+
+--- 
+## Human Mobility Models
+
+<img class="center" src=figures/zipf_and_newton.jpg height="315" width="500">
 
 --- 
 
 ## Human Mobility Models
-
 * Humans (may) follow simple reproducible patterns in their movements
-* Key features:
+* Key predictors:
  * Population / population density
  * Distance between locations
 * Gravity Models $\left(pr( i \rightarrow j) \propto \frac{P_i^{\alpha}P_j^{\beta}}{f(d_{ij})}\right)$
 * Radiation Models (non-parametric)
 * Useful for understanding disease dynamics especially in the context of individual-based models
-<img class="center" src=figures/zipf_and_newton.jpg height="105" width="190">
 
 --- &twocol w1:50% w2:50%
 
 ## D4D Data Set
 
-* 484,383 individuals observed over different two week periods
-* 55,319,911 calls made from 1194 towers
+* 500,000 individuals observed over different two week periods
+* 55,319,911 calls made from ~1200 towers
 
 *** left 
 ```{r echo=FALSE,tidy=TRUE}
@@ -59,8 +66,23 @@ head(dat[sample(nrow(dat),10),])
 <p></p>
 <img class="center" src=figures/time_between_calls50.png height="500" width="500">
 
----
+--- &twocol w1:50% w2:50%
 
+*** left
+
+<p></p>
+<p></p>
+<p></p>
+<img class="center" src=figures/home_disp_hist_no_zeros.png height="500" width="500">
+
+*** right
+
+<p></p>
+<p></p>
+<p></p>
+<img class="center" src=figures/home_disp_ecdf.png height="500" width="500">
+
+---
 ## Towers
 
 <img class="center" src=figures/towers_tesselation.png height="550" width="550">
@@ -69,7 +91,7 @@ head(dat[sample(nrow(dat),10),])
 
 ## Our (simple) Mobility Model
 
-* Person k (given their home location) will be seen in any other location at any point in time ($\nu_{i,j}$)
+* Person $k$ (given their home location $i$) will be seen in any other location at any point in time with probability ($\nu_{i,j}$)
 \[ 
 \begin{align}
  logit(\nu_{i,j}) = 
@@ -103,7 +125,7 @@ head(dat[sample(nrow(dat),10),])
 
 ## Cholera Transmission Model
 
-* Discrete-time Susceptible Infectious Recovered (SIR) Model
+* Discrete-time Susceptible Infectious Recovered (SIR) model
 * Country divided into 5-km grid cells
 * All infections mediated through environment
  * Cholera infected individuals shed vibrios into "environment"
@@ -120,13 +142,14 @@ head(dat[sample(nrow(dat),10),])
 
 ## Cholera Simulations
 
-<img class="center" src=figures/arrival_time_run2.png height="500" width="400">
+<img class="center" src=figures/run5_3.png height="500" width="600">
+<h4><a href="http://andrewazman.com/D4D/movies/run3">example simulation</a></h4>
 
 ---
 
 ## Cholera Simulations
 
-<img class="center" src=figures/run5_3.png height="500" width="600">
+<img class="center" src=figures/arrival_time_run2.png height="500" width="400">
 
 ---
 
@@ -136,7 +159,7 @@ head(dat[sample(nrow(dat),10),])
   * How to learn about duration
   * Simulations to understand potential biases
 * Refine functional form of environmental modifiers 
-* Fit to cholera data
+* Fit to cholera data 
 * Exploration of general epidemiologic connectivity of areas within country
 
 ---
@@ -147,5 +170,9 @@ head(dat[sample(nrow(dat),10),])
  * frequency of calls from a single location in a day?
  * time between calls in the same location?
 
+--- 
 
-
+## Links
+* [netmob](http://perso.uclouvain.be/vincent.blondel/netmob/2013/)
+* [kaggle](http://www.kaggle.com/)
+* [d4d](http://www.d4d.orange.com)

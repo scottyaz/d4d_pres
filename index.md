@@ -10,42 +10,49 @@ widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 ---
 
-## Background
-- [D4D competition](http://www.d4d.orange.com/home)  to make the most of mobile phone data from Cote d'Ivoir
-- How do human mobility and environmental factors drive cholera transmission
- - Most mobility models parameter using data from North America or Europe.  What about Africa? 
- - Most models formulated in terms of person-to-person transmission. What can we learn from an environmentally driven model?
+<img class="center" src=figures/d4dscreen.tiff height="600" width="900">
+
+
+---
+
+## Motivation
+- What role do human mobility and local environmental conditions play in cholera transmission?
+ - North American/European vs. African mobility patterns
+ - Person-to-person vs. environmentally mediated transmission
+
+--- 
+## Human Mobility Models
+
+<img class="center" src=figures/zipf_and_newton.jpg height="315" width="500">
 
 --- 
 
 ## Human Mobility Models
-
 * Humans (may) follow simple reproducible patterns in their movements
-* Key features:
+* Key predictors:
  * Population / population density
  * Distance between locations
 * Gravity Models $\left(pr( i \rightarrow j) \propto \frac{P_i^{\alpha}P_j^{\beta}}{f(d_{ij})}\right)$
 * Radiation Models (non-parametric)
 * Useful for understanding disease dynamics especially in the context of individual-based models
-<img class="center" src=figures/zipf_and_newton.jpg height="105" width="190">
 
 --- &twocol w1:50% w2:50%
 
 ## D4D Data Set
 
-* 484,383 individuals observed over different two week periods
-* 55,319,911 calls made from 1194 towers
+* 500,000 individuals observed over different two week periods
+* 55,319,911 calls made from ~1200 towers
 
 *** left 
 
 ```
 ##      id      call.date.time call.tower
-## 77    1 2011-12-13 20:11:00        264
-## 6208 56 2011-12-08 17:53:00        709
-## 951  12 2011-12-14 18:24:00        841
-## 5082 45 2011-12-08 07:13:00        307
-## 5587 52 2011-12-11 19:07:00        331
-## 5788 53 2011-12-09 15:01:00        322
+## 4815 43 2011-12-11 17:37:00        837
+## 6807 59 2011-12-14 09:21:00       1027
+## 5109 46 2011-12-10 10:01:00        285
+## 2700 23 2011-12-16 17:19:00        863
+## 2684 23 2011-12-14 20:14:00        967
+## 9895 96 2011-12-12 20:44:00        186
 ```
 
 
@@ -64,8 +71,23 @@ mode        : selfcontained # {standalone, draft}
 <p></p>
 <img class="center" src=figures/time_between_calls50.png height="500" width="500">
 
----
+--- &twocol w1:50% w2:50%
 
+*** left
+
+<p></p>
+<p></p>
+<p></p>
+<img class="center" src=figures/home_disp_hist_no_zeros.png height="500" width="500">
+
+*** right
+
+<p></p>
+<p></p>
+<p></p>
+<img class="center" src=figures/home_disp_ecdf.png height="500" width="500">
+
+---
 ## Towers
 
 <img class="center" src=figures/towers_tesselation.png height="550" width="550">
@@ -74,7 +96,7 @@ mode        : selfcontained # {standalone, draft}
 
 ## Our (simple) Mobility Model
 
-* Person k (given their home location) will be seen in any other location at any point in time ($\nu_{i,j}$)
+* Person $k$ (given their home location $i$) will be seen in any other location at any point in time with probability ($\nu_{i,j}$)
 \[ 
 \begin{align}
  logit(\nu_{i,j}) = 
@@ -108,7 +130,7 @@ mode        : selfcontained # {standalone, draft}
 
 ## Cholera Transmission Model
 
-* Discrete-time Susceptible Infectious Recovered (SIR) Model
+* Discrete-time Susceptible Infectious Recovered (SIR) model
 * Country divided into 5-km grid cells
 * All infections mediated through environment
  * Cholera infected individuals shed vibrios into "environment"
@@ -125,13 +147,14 @@ mode        : selfcontained # {standalone, draft}
 
 ## Cholera Simulations
 
-<img class="center" src=figures/arrival_time_run2.png height="500" width="400">
+<img class="center" src=figures/run5_3.png height="500" width="600">
+<h4><a href="http://andrewazman.com/D4D/movies/run3">example simulation</a></h4>
 
 ---
 
 ## Cholera Simulations
 
-<img class="center" src=figures/run5_3.png height="500" width="600">
+<img class="center" src=figures/arrival_time_run2.png height="500" width="400">
 
 ---
 
@@ -141,7 +164,7 @@ mode        : selfcontained # {standalone, draft}
   * How to learn about duration
   * Simulations to understand potential biases
 * Refine functional form of environmental modifiers 
-* Fit to cholera data
+* Fit to cholera data 
 * Exploration of general epidemiologic connectivity of areas within country
 
 ---
@@ -152,5 +175,9 @@ mode        : selfcontained # {standalone, draft}
  * frequency of calls from a single location in a day?
  * time between calls in the same location?
 
+--- 
 
-
+## Links
+* [netmob](http://perso.uclouvain.be/vincent.blondel/netmob/2013/)
+* [kaggle](http://www.kaggle.com/)
+* [d4d](http://www.d4d.orange.com)

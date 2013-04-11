@@ -42,18 +42,10 @@
     <!-- SLIDES -->
       <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Background</h2>
+    
   </hgroup>
   <article>
-    <ul>
-<li><a href="http://www.d4d.orange.com/home">D4D competition</a>  to make the most of mobile phone data from Cote d&#39;Ivoir</li>
-<li>How do human mobility and environmental factors drive cholera transmission
-
-<ul>
-<li>Most mobility models parameter using data from North America or Europe.  What about Africa? </li>
-<li>Most models formulated in terms of person-to-person transmission. What can we learn from an environmentally driven model?</li>
-</ul></li>
-</ul>
+    <p><img class="center" src=figures/d4dscreen.tiff height="600" width="900"></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -61,21 +53,16 @@
 
       <slide class="" id="slide-2" style="background:;">
   <hgroup>
-    <h2>Human Mobility Models</h2>
+    <h2>Motivation</h2>
   </hgroup>
   <article>
     <ul>
-<li>Humans (may) follow simple reproducible patterns in their movements</li>
-<li>Key features:
+<li>What role do human mobility and local environmental conditions play in cholera transmission?
 
 <ul>
-<li>Population / population density</li>
-<li>Distance between locations</li>
+<li>North American/European vs. African mobility patterns</li>
+<li>Person-to-person vs. environmentally mediated transmission</li>
 </ul></li>
-<li>Gravity Models \(\left(pr( i \rightarrow j) \propto \frac{P_i^{\alpha}P_j^{\beta}}{f(d_{ij})}\right)\)</li>
-<li>Radiation Models (non-parametric)</li>
-<li>Useful for understanding disease dynamics especially in the context of individual-based models
-<img class="center" src=figures/zipf_and_newton.jpg height="105" width="190"></li>
 </ul>
 
   </article>
@@ -84,23 +71,56 @@
 
       <slide class="" id="slide-3" style="background:;">
   <hgroup>
+    <h2>Human Mobility Models</h2>
+  </hgroup>
+  <article>
+    <p><img class="center" src=figures/zipf_and_newton.jpg height="315" width="500"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Human Mobility Models</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li>Humans (may) follow simple reproducible patterns in their movements</li>
+<li>Key predictors:
+
+<ul>
+<li>Population / population density</li>
+<li>Distance between locations</li>
+</ul></li>
+<li>Gravity Models \(\left(pr( i \rightarrow j) \propto \frac{P_i^{\alpha}P_j^{\beta}}{f(d_{ij})}\right)\)</li>
+<li>Radiation Models (non-parametric)</li>
+<li>Useful for understanding disease dynamics especially in the context of individual-based models</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-5" style="background:;">
+  <hgroup>
     <h2>D4D Data Set</h2>
   </hgroup>
   <article>
     <ul>
-<li>484,383 individuals observed over different two week periods</li>
-<li>55,319,911 calls made from 1194 towers</li>
+<li>500,000 individuals observed over different two week periods</li>
+<li>55,319,911 calls made from ~1200 towers</li>
 </ul>
 
 
 <div class='left' style='float:left;width:50%'>
  <pre><code>##      id      call.date.time call.tower
-## 77    1 2011-12-13 20:11:00        264
-## 6208 56 2011-12-08 17:53:00        709
-## 951  12 2011-12-14 18:24:00        841
-## 5082 45 2011-12-08 07:13:00        307
-## 5587 52 2011-12-11 19:07:00        331
-## 5788 53 2011-12-09 15:01:00        322
+## 4815 43 2011-12-11 17:37:00        837
+## 6807 59 2011-12-14 09:21:00       1027
+## 5109 46 2011-12-10 10:01:00        285
+## 2700 23 2011-12-16 17:19:00        863
+## 2684 23 2011-12-14 20:14:00        967
+## 9895 96 2011-12-12 20:44:00        186
 </code></pre>
 
 </div>
@@ -111,7 +131,7 @@
   <!-- Presenter Notes -->
 </slide>
 
-      <slide class="" id="slide-4" style="background:;">
+      <slide class="" id="slide-6" style="background:;">
   <hgroup>
     
   </hgroup>
@@ -142,7 +162,38 @@
   <!-- Presenter Notes -->
 </slide>
 
-      <slide class="" id="slide-5" style="background:;">
+      <slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    
+  </hgroup>
+  <article>
+    
+<div class='left' style='float:left;width:50%'>
+ <p></p>
+
+<p></p>
+
+<p></p>
+
+<p><img class="center" src=figures/home_disp_hist_no_zeros.png height="500" width="500"></p>
+
+
+</div>
+<div class='right' style='float:right;width:50%'>
+ <p></p>
+
+<p></p>
+
+<p></p>
+
+<p><img class="center" src=figures/home_disp_ecdf.png height="500" width="500"></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-8" style="background:;">
   <hgroup>
     <h2>Towers</h2>
   </hgroup>
@@ -153,13 +204,13 @@
   <!-- Presenter Notes -->
 </slide>
 
-      <slide class="" id="slide-6" style="background:;">
+      <slide class="" id="slide-9" style="background:;">
   <hgroup>
     <h2>Our (simple) Mobility Model</h2>
   </hgroup>
   <article>
     <ul>
-<li>Person k (given their home location) will be seen in any other location at any point in time (\(\nu_{i,j}\))
+<li>Person \(k\) (given their home location \(i\)) will be seen in any other location at any point in time with probability (\(\nu_{i,j}\))
 \[ 
 \begin{align}
 logit(\nu_{i,j}) = 
@@ -185,7 +236,7 @@ log(P_i) + \alpha_4 log(P_j) + \alpha_5 log(d_{ij}) & \mbox{if } i \neq j
   <!-- Presenter Notes -->
 </slide>
 
-      <slide class="" id="slide-7" style="background:;">
+      <slide class="" id="slide-10" style="background:;">
   <hgroup>
     <h2>Model Fit</h2>
   </hgroup>
@@ -236,13 +287,13 @@ log(P_i) + \alpha_4 log(P_j) + \alpha_5 log(d_{ij}) & \mbox{if } i \neq j
   <!-- Presenter Notes -->
 </slide>
 
-      <slide class="" id="slide-8" style="background:;">
+      <slide class="" id="slide-11" style="background:;">
   <hgroup>
     <h2>Cholera Transmission Model</h2>
   </hgroup>
   <article>
     <ul>
-<li>Discrete-time Susceptible Infectious Recovered (SIR) Model</li>
+<li>Discrete-time Susceptible Infectious Recovered (SIR) model</li>
 <li>Country divided into 5-km grid cells</li>
 <li>All infections mediated through environment
 
@@ -257,7 +308,7 @@ log(P_i) + \alpha_4 log(P_j) + \alpha_5 log(d_{ij}) & \mbox{if } i \neq j
   <!-- Presenter Notes -->
 </slide>
 
-      <slide class="" id="slide-9" style="background:;">
+      <slide class="" id="slide-12" style="background:;">
   <hgroup>
     <h2>Environmental Mediators of Transmission</h2>
   </hgroup>
@@ -268,7 +319,20 @@ log(P_i) + \alpha_4 log(P_j) + \alpha_5 log(d_{ij}) & \mbox{if } i \neq j
   <!-- Presenter Notes -->
 </slide>
 
-      <slide class="" id="slide-10" style="background:;">
+      <slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Cholera Simulations</h2>
+  </hgroup>
+  <article>
+    <p><img class="center" src=figures/run5_3.png height="500" width="600"></p>
+
+<h4><a href="http://andrewazman.com/D4D/movies/run3">example simulation</a></h4>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-14" style="background:;">
   <hgroup>
     <h2>Cholera Simulations</h2>
   </hgroup>
@@ -279,18 +343,7 @@ log(P_i) + \alpha_4 log(P_j) + \alpha_5 log(d_{ij}) & \mbox{if } i \neq j
   <!-- Presenter Notes -->
 </slide>
 
-      <slide class="" id="slide-11" style="background:;">
-  <hgroup>
-    <h2>Cholera Simulations</h2>
-  </hgroup>
-  <article>
-    <p><img class="center" src=figures/run5_3.png height="500" width="600"></p>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-      <slide class="" id="slide-12" style="background:;">
+      <slide class="" id="slide-15" style="background:;">
   <hgroup>
     <h2>Future Directions</h2>
   </hgroup>
@@ -303,7 +356,7 @@ log(P_i) + \alpha_4 log(P_j) + \alpha_5 log(d_{ij}) & \mbox{if } i \neq j
 <li>Simulations to understand potential biases</li>
 </ul></li>
 <li>Refine functional form of environmental modifiers </li>
-<li>Fit to cholera data</li>
+<li>Fit to cholera data </li>
 <li>Exploration of general epidemiologic connectivity of areas within country</li>
 </ul>
 
@@ -311,7 +364,7 @@ log(P_i) + \alpha_4 log(P_j) + \alpha_5 log(d_{ij}) & \mbox{if } i \neq j
   <!-- Presenter Notes -->
 </slide>
 
-      <slide class="" id="slide-13" style="background:;">
+      <slide class="" id="slide-16" style="background:;">
   <hgroup>
     <h2>Extensions of the Mobility Model</h2>
   </hgroup>
@@ -324,6 +377,21 @@ log(P_i) + \alpha_4 log(P_j) + \alpha_5 log(d_{ij}) & \mbox{if } i \neq j
 <li>frequency of calls from a single location in a day?</li>
 <li>time between calls in the same location?</li>
 </ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>Links</h2>
+  </hgroup>
+  <article>
+    <ul>
+<li><a href="http://perso.uclouvain.be/vincent.blondel/netmob/2013/">netmob</a></li>
+<li><a href="http://www.kaggle.com/">kaggle</a></li>
+<li><a href="http://www.d4d.orange.com">d4d</a></li>
 </ul>
 
   </article>
