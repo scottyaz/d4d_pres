@@ -47,14 +47,18 @@ mode        : selfcontained # {standalone, draft}
 
 ```
 ##      id      call.date.time call.tower
-## 3488 33 2011-12-08 14:28:00        648
-## 3940 39 2011-12-12 05:38:00        115
-## 5045 44 2011-12-13 17:13:00       1063
-## 3485 33 2011-12-08 09:55:00        648
-## 7628 72 2011-12-06 23:29:00        564
-## 7082 64 2011-12-18 17:09:00        837
+## 1825 20 2011-12-09 12:37:00        898
+## 2844 24 2011-12-13 14:38:00        251
+## 6352 56 2011-12-16 08:08:00        709
+## 5362 50 2011-12-09 09:28:00         38
+## 8489 85 2011-12-09 17:19:00       1016
+## 4297 42 2011-12-05 21:40:00        240
 ```
 
+
+---
+
+<img class="center" src=figures/towers_tesselation.png height="550" width="600">
 
 --- &twocol w1:50% w2:50%
 
@@ -78,7 +82,7 @@ mode        : selfcontained # {standalone, draft}
 <p></p>
 <p></p>
 <p></p>
-<img class="center" src=figures/home_disp_hist_no_zeros.png height="500" width="500">
+<img class="center" src=figures/disp_hist_no_zeros_freq.png height="500" width="500">
 
 *** right
 
@@ -86,11 +90,6 @@ mode        : selfcontained # {standalone, draft}
 <p></p>
 <p></p>
 <img class="center" src=figures/home_disp_ecdf.png height="500" width="500">
-
----
-## Towers
-
-<img class="center" src=figures/towers_tesselation.png height="550" width="600">
 
 ---
 
